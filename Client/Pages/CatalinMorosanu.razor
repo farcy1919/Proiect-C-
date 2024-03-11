@@ -1,0 +1,32 @@
+﻿@page "/trainer/{ID:int}"
+
+
+<h1 style="font-size: 36px;">@selectedTrainer.FirstName</h1>
+
+<h3>@selectedTrainer.LastName</h3>
+
+<div class="trainer-container">
+    <img class="trainer-image" src="@selectedTrainer.ImgSrc" alt="Trainer Image" />
+    <img class="trainer-details" src="@selectedTrainer.Details" />
+</div>
+
+@code{
+
+
+[Parameter] public int ID { get; set; }
+    List<Trainer> _trainers = new List<Trainer>()
+    {
+    new Trainer {ID=1, Age=28, FirstName="Andrei", LastName="Stoica", Details="Luptator KickBox"  ,Matches=100, KO=55, ImgSrc="https://cdn.onefc.com/wp-content/uploads/2019/02/Andrei_Stoica-hero-1200x11653.jpg"},
+    new Trainer {ID=2, Age=39, FirstName = "Catalin", LastName = "Morosanu",Matches=80,KO=20, Details="Luptator de performanta", ImgSrc="https://cdn.romania24.ro/wp-content/uploads/2019/04/catalin-morosanu-sursa-facebook-1-e1556018836327.jpg"},
+    new Trainer {ID=3, Age=28, FirstName="Mihai", LastName="Zmarandescu", Details="Luptator MMA"  ,Matches=30, KO=7, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACMZmara.png"},
+    new Trainer {ID=4, Age=32, FirstName="Bogdan", LastName="Stoica", Details="Luptator KickBox"  ,Matches=50, KO=15, ImgSrc="https://cacheimg.gsp.ro/autocrop/smp-images-production/gsp.ro/01022021/1612191449819.jpg?width=900&height=0"},
+    new Trainer {ID=5, Age=28, FirstName="Tudor", LastName="Potoroaca", Details="Luptator KEMPO"  ,Matches=37, KO=20, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/tudor.png"}
+ 
+    };
+    protected override async Task OnInitializedAsync()
+    {
+        selectedTrainer = _trainers.First(x => x.ID == ID);
+    }
+    Trainer selectedTrainer = new Trainer();
+}
+

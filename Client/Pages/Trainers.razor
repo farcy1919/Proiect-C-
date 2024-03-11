@@ -1,0 +1,105 @@
+﻿@page "/trainers"
+@inject HttpClient httpClient
+
+
+
+<MudContainer Class="trainers w-100"  >
+
+<MudTypography Variant="Variant.H4" Class="font-weight-bold text-center" Style="text-transform: uppercase; font-size: 2rem;">
+    <span>DESCOPERĂ</span> <span style="color: red;">ANTRENORII</span> DE LA ACADEMIA DE ARTE MARȚIALE DIN ROMANIA
+</MudTypography>
+
+<br />
+<br />
+<br />
+
+<MudGrid>
+    <MudItem xs="12" Style="display: flex; justify-content: space-between;">
+        @foreach (var Trainer in _trainers)
+        {
+            <MudItem xs="12" sm="3">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderAvatar>
+                            <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                        </CardHeaderAvatar>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.body1">@Trainer.FirstName</MudText>
+                                <MudText Typo="Typo.body1">@Trainer.LastName</MudText>
+                                <MudText Typo="Typo.body2">@Trainer.Details</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Default" Link="@($"/trainer/{Trainer.ID}")"/>
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardMedia Image="@Trainer.ImgSrc" />
+                        <MudCardContent>
+                            <div class="d-flex flex-column align-center">
+                                <MudRating SelectedValue="5" Size="Size.Medium" />
+                            </div>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+        }
+    </MudItem>
+</MudGrid>
+
+<br />
+
+
+<MudTable T="Trainer" Items="@_trainers" @ref="_trainerTable">
+    <HeaderContent>
+        <MudTh>FirstName</MudTh>
+        <MudTh>LastName</MudTh>
+        <MudTh>Matches</MudTh>
+        <MudTh>KO</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
+            <MudTd DataLabel="lastName">@context.LastName</MudTd>
+            <MudTd DataLabel="Matches">@context.Matches</MudTd>
+            <MudTd DataLabel="KO">@context.KO</MudTd>
+        </RowTemplate>
+    </MudTable>
+
+    <br
+    <br />
+    <br />
+
+    <MudPaper Height="400px" Width="100%" Class="mud-theme-primary" Style="position: relative; overflow: hidden;">
+        <img src="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0717-scaled.jpg" alt="Antrenament gratuit" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        <div style="text-align: center; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1>
+                PRIMUL ANTRENAMENT GRATUIT!<br>
+                <span style="font-size: 14px;">*doar pentru cei sub 16 ani*</span>
+            </h1>
+            <div style="text-align: center; margin-top: 20px; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+                <button style="margin-right: 10px; background-color: transparent; border: 2px solid white; border-radius: 50px; color: white;">Contact</button>
+                <button style="background-color: red; border: none; border-radius: 50px; color: white;">Inscrie-te</button>
+            </div>
+
+
+        </div>
+    </MudPaper>
+
+   
+    </MudContainer>
+
+    @code {
+
+    MudTable<Trainer> _trainerTable;
+    List<Trainer> _trainers = new List<Trainer>()
+    {
+    new Trainer {ID=1, Age=28, FirstName="Andrei", LastName="Stoica", Details="Luptator KickBox"  ,Matches=100, KO=55, ImgSrc="https://cdn.onefc.com/wp-content/uploads/2019/02/Andrei_Stoica-hero-1200x11653.jpg"},
+    new Trainer {ID=2, Age=39, FirstName = "Catalin", LastName = "Morosanu",Matches=80,KO=20, Details="Luptator KickBox", ImgSrc="https://cdn.romania24.ro/wp-content/uploads/2019/04/catalin-morosanu-sursa-facebook-1-e1556018836327.jpg"},
+    new Trainer {ID=3, Age=28, FirstName="Mihai", LastName="Zmarandescu", Details="Luptator MMA"  ,Matches=30, KO=7, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACMZmara.png"},
+    new Trainer {ID=4, Age=32, FirstName="Bogdan", LastName="Stoica", Details="Luptator KickBox"  ,Matches=50, KO=15, ImgSrc="https://cacheimg.gsp.ro/autocrop/smp-images-production/gsp.ro/01022021/1612191449819.jpg?width=900&height=0"},
+    new Trainer {ID=5, Age=28, FirstName="Tudor", LastName="Potoroaca", Details="Luptator KEMPO"  ,Matches=37, KO=20, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/tudor.png"},
+
+
+};
+
+    
+
+}

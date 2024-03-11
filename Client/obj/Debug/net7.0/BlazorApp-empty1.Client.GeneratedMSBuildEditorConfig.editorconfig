@@ -1,0 +1,71 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BlazorApp-empty1.Client
+build_property.RootNamespace = BlazorApp-empty1.Client
+build_property.ProjectDir = C:\Users\z0250200\OneDrive - ZF Friedrichshafen AG\Desktop\BlazorApp-empty1\Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\z0250200\OneDrive - ZF Friedrichshafen AG\Desktop\BlazorApp-empty1\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/CatalinMorosanu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0YWxpbk1vcm9zYW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/FightersPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlnaHRlcnNQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/Registration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Pages/Trainers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaW5lcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/z0250200/OneDrive - ZF Friedrichshafen AG/Desktop/BlazorApp-empty1/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

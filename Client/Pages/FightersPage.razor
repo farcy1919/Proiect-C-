@@ -1,0 +1,96 @@
+﻿
+@page "/fighters"
+
+<div class="fighters">
+
+<MudTypography Variant="Variant.H4" Class="font-weight-bold text-center" Style="text-transform: uppercase; font-size: 2rem;">
+    <span>DESCOPERA VIITORII</span> <span style="color: red;">CAMPIONI</span> DE LA ACADEMIA DE ARTE MARȚIALE DIN ROMANIA
+</MudTypography>
+<br />
+<br />
+<br />
+<MudGrid>
+    <MudItem xs="12" Style="display: flex; justify-content: space-between;">
+        @foreach (var Fighter in _fighters)
+        {
+            <MudItem xs="12" sm="3">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderAvatar>
+                            <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                        </CardHeaderAvatar>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.body1">@Fighter.FirstName</MudText>
+                                <MudText Typo="Typo.body1">@Fighter.LastName</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Default" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardMedia Image="@Fighter.ImgSrc" />
+                        <MudCardContent>
+                            <div class="d-flex flex-column align-center">
+                                <MudRating SelectedValue="4" Size="Size.Medium" />
+                            </div>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+        }
+    </MudItem>
+</MudGrid>
+
+<br />
+<br />
+<br />
+
+<MudTable T="Fighter" Items="@_fighters" @ref="_fighterTable">
+    <HeaderContent>
+        <MudTh>FirstName</MudTh>
+        <MudTh>LastName</MudTh>
+        <MudTh>Winnings</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
+            <MudTd DataLabel="lastName">@context.LastName</MudTd>
+            <MudTd DataLabel="Winnings">@context.Winnings</MudTd>
+        </RowTemplate>
+    </MudTable>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <MudPaper Height="400px" Width="100%" Class="mud-theme-primary" Style="position: relative; overflow: hidden;">
+        <img src="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0717-scaled.jpg" alt="Antrenament gratuit" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        <div style="text-align: center; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1>
+                PRIMUL ANTRENAMENT GRATUIT!<br>
+                <span style="font-size: 14px;">*doar pentru cei sub 16 ani*</span>
+            </h1>
+            <div style="text-align: center; margin-top: 20px; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+                <button style="margin-right: 10px; background-color: transparent; border: 2px solid white; border-radius: 50px; color: white;">Contact</button>
+                <button style="background-color: red; border: none; border-radius: 50px; color: white;">Inscrie-te</button>
+            </div>
+
+
+        </div>
+    </MudPaper>
+
+
+    </div>
+@code {
+
+        MudTable<Fighter> _fighterTable;
+        List<Fighter> _fighters = new List<Fighter>()
+    {
+    new Fighter {ID=1, Age=28, FirstName="Florin", LastName="Cenat", Winnings=10, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACMFlorin-Cernat.png"},
+    new Fighter {ID=2, Age=39, FirstName = "Claudiu", LastName = "Patru" , Winnings=20 , ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACMClaudiu-Patru.png"},
+    new Fighter {ID=3, Age=28, FirstName="Stefan", LastName="Craioveanu", Winnings=20, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/1.png"},
+new Fighter {ID=3, Age=28, FirstName="Mihai", LastName="Stefan", Winnings=12, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACM-SiteMihai-Stefan.png"},
+new Fighter {ID=3, Age=28, FirstName="Catalin", LastName="Iancu", Winnings=16, ImgSrc="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/Antrenori-ACM-SiteCatalin-Iancu.png"}
+
+};
+
+}

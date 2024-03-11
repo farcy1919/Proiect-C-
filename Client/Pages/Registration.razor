@@ -1,0 +1,53 @@
+﻿@page "/registration"
+@inject ISnackbar Snackbar
+
+
+
+<h1>Formular inscriere</h1>
+
+    <MudGrid Style="height:100vh">
+        <MudItem xs="12" sm="9">
+            <MudPaper Class="pa-4">
+                <MudForm OnValidSubmit="Submit">
+                    <MudTextField T="string" Label="Name" Required="true" RequiredError="Name is required!" @bind-Value="name" />
+                    <MudTextField T="string" Label="Last Name" Required="true" RequiredError="Last Name is required!" @bind-Value="lastName" />
+                    <MudTextField T="int" Label="Phone Number" Required="true" RequiredError="Phone Number is required!" @bind-Value="phoneNumber" />
+                    <label for="TipAntrenament">Tipul de antrenament pe care il doresti:</label>
+                    <MudItem class="d-flex">
+                        <MudRadioGroup T="string" Required="true" RequiredError="Type of training is required!" @bind-Value="selectedTraining">
+                            <MudRadio Option="@("KickBox")">KickBox</MudRadio>
+                            <MudRadio Option="@("MMA")">MMA</MudRadio>
+                            <MudRadio Option="@("Kempo")">Kempo</MudRadio>
+                        </MudRadioGroup>
+                    </MudItem>
+                    <MudButton Type="ButtonType.Submit" Class="text-white btn-primary" OnClick="HandleSubmit">Submit</MudButton>
+                </MudForm>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+
+
+@code {
+    
+
+    private string name = "";
+    private string lastName = "";
+    private int phoneNumber;
+    private string selectedTraining = "";
+
+    private void HandleSubmit()
+    {
+
+        if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(lastName) && phoneNumber != 0 && !string.IsNullOrEmpty(selectedTraining))
+        {
+            Snackbar.Add("Felicitari! Tocmai te-ai inscris la unul dintre antrenamentele academiei.", Severity.Success);
+        }
+        else
+        {
+            
+            Snackbar.Add("Nu ai completat toate campurile.", Severity.Error);
+            
+        }
+    }
+}

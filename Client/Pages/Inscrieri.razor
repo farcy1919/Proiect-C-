@@ -1,0 +1,78 @@
+﻿@page "/registration"
+
+
+<style>
+    body {
+        background-image: url('https://wallpaperaccess.com/full/113292.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+
+<h3>Formular de inscrieri</h3>
+
+<MudGrid>
+    <MudItem xs="12" sm="9">
+        <MudPaper Class="pa-4">
+            <MudForm OnValidSubmit="HandleSubmit">
+                <MudTextField T="string" Label="Name" Required="true" RequiredError="Name is required!" />
+                <MudTextField T="string" Label="Last Name" Required="true" RequiredError="Last Name is required!" />
+                <MudTextField T="int" Label="Phone Number" Required="true" RequiredError="Phone Number is required!" />
+                <label for="TipAntrenament">Tipul de antrenament pe care il doresti:</label>
+                <MudItem class="d-flex">
+                    <MudRadioGroup T="string" Required="true" RequiredError="Type of training is required!">
+                        <MudRadio Option="@("KickBox")">KickBox</MudRadio>
+                        <MudRadio Option="@("MMA")">MMA</MudRadio>
+                        <MudRadio Option="@("Kempo")">Kempo</MudRadio>
+                    </MudRadioGroup>
+                </MudItem>
+                <MudButton Type="ButtonType.Submit" Class="text-white btn-primary">Submit</MudButton>
+                @if (showSuccessAlert)
+                {
+                    <MudAlert Severity="Severity.Success">The reactor is running at optimum temperature</MudAlert>
+                    <MudTimeline>
+                        <MudTimelineItem>
+                            <MudText>Te-ai înscris</MudText>
+                        </MudTimelineItem>
+                        <MudTimelineItem>
+                            <MudText Align="Align.End">O să fii contactat</MudText>
+                        </MudTimelineItem>
+                        <MudTimelineItem Color="Color.Primary">
+                            <MudText>Prezintă-te la antrenament</MudText>
+                        </MudTimelineItem>
+                    </MudTimeline>
+                }
+            </MudForm>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code 
+{
+
+    private bool showSuccessAlert = false;
+    private string name = "";
+    private string lastName = "";
+    private int phoneNumber;
+    private string selectedTraining = "";
+
+    private void HandleSubmit()
+    {
+        // Verifică dacă toate câmpurile sunt completate
+        if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(lastName) && phoneNumber != 0 && !string.IsNullOrEmpty(selectedTraining))
+        {
+            showSuccessAlert = true;
+        }
+        else
+        {
+            // Altfel, poți afișa o altă alertă sau mesaj de eroare
+            // De exemplu, poți folosi MudAlert pentru a afișa un mesaj de eroare
+            showSuccessAlert = false;
+            <MudAlert Severity="Severity.Error">Câmpurile nu sunt completate</MudAlert>
+        }
+    }
+}

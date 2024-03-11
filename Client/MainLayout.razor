@@ -1,0 +1,62 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        Academia de Arte Martiale din Romania
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent Style="@($"background-image: url('{(Backgrounds.ContainsKey(currentLocation)? Backgrounds[currentLocation]:"")}');  background-repeat: no-repeat; background-size: cover;")">
+        <MudContainer>
+            @Body
+        </MudContainer>
+        <Footer />
+    </MudMainContent>
+</MudLayout>
+
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    string currentLocation;
+
+    Dictionary<string, string> Backgrounds = new Dictionary<string, string>()
+    {
+        {
+            "https://localhost:7144/trainers", "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/DSC_0065-scaled.jpg"
+        }
+        ,
+        {
+            "https://localhost:7144/fighters", "https://wallpaperaccess.com/full/113292.jpg"
+        }
+        ,
+        {
+            "https://localhost:7144/registration", "https://www.pontul-zilei.com/wp-content/uploads/2020/03/Luptatori-K1-Care-sunt-cei-mai-buni-1024x683.jpg"
+        }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged += HandleLocationChange;
+        currentLocation = Navigation.Uri;
+    }
+
+
+    private void HandleLocationChange(object sender, LocationChangedEventArgs newLocation)
+    {
+        currentLocation = newLocation.Location;
+        Console.WriteLine(newLocation.Location);
+        StateHasChanged();
+    }
+}

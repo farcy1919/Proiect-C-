@@ -1,0 +1,162 @@
+﻿@page "/"
+
+
+
+<div class="home-page">
+
+<MudPaper Height="600px" Width="100%" Class="mud-theme-primary" Style="position: relative; overflow: hidden;">
+    <img src="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/04/DSC_0054-scaled.jpg" alt="Antrenament gratuit" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
+    <div style="text-align: center; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" >
+        <h1>
+            CEA MAI COMPLETĂ ȘI INOVATIVĂ
+            SALĂ DE ARTE MARTIALE DIN ROMÂNIA<br>
+        </h1>
+        <button style="background-color: transparent; color: white; border: 2px solid white; border-radius: 10px; padding: 10px 20px; font-size: 16px; margin-top: 20px;">
+            Primul antrenament gratuit
+        </button>
+    </div>
+</MudPaper>
+
+<div style="text-align: center; padding: 20px;">
+    <h1 class="mud-typography-h4">PUTEREA VINE SUB MULTE FORME</h1>
+    <hr class="mud-divider" />
+    <p class="mud-typography-body2">
+        Din 2021, Academia de arte marțiale din Romania motivează și ajută oamenii să găsească forța și ambiția interioară.
+    </p>
+    <p class="mud-typography-body2 white-text">
+        Academia de arte marțiale din Timișoara a fost înființată de către Andrei Stoica, un sportiv ce reprezintă una dintre cele mai de succes povești din kickboxing la nivel mondial, dovada vie că prin muncă îți poți atinge visul cel mare.
+    </p>
+    <p class="mud-typography-body2 gray-text" style="font-style: italic;">
+    “Artele marțiale nu sunt despre luptă, ci despre construirea caracterului”​
+</p>
+</div>
+<br/><br/><br/><br/>
+
+
+
+<MudContainer Style="display: flex; align-items: flex-start;">
+
+    <div class="video-container" style="margin-right: 30px;">
+        <iframe style="width: 500px; height: 350px;" src="https://www.youtube.com/embed/xx2-a9nWqsI" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div style="flex: 1; text-align: left; display: flex; flex-direction: column; align-items: center; margin-left: 20px;">
+        <h1 style="font-size: 28px; text-align: center; margin-bottom: 20px;">EXPERIENTA UNEI SĂLI COMPLETE</h1>
+        <p style="font-size: 18px; line-height: 1.5; margin-bottom: 20px; text-align: center;">
+            Academia este una dintre cele mai complete și mai inovatoare săli de arte marțiale din România. O sală unde puteți experimenta diverse discipline sub îndrumarea unui profesionist, locul în care te poți antrena, învăța și practica arte marțiale. Oferim antrenamente atât pentru avansați cât și pentru începători, copii și adulți. Dedicarea antrenorilor noștri asigură o experiență unică la cursurile de arte marțiale de fiecare dată. Academia De Arte Martiale promovează antrenamente intense pentru un corp sănătos dar și o minte sănătoasă, atât pentru tineri cât și pentru adulți, bărbați sau femei.
+        </p>
+    </div>
+
+</MudContainer>
+
+
+
+
+
+<h1>CUM ARATA ACADEMIA DE ARTE MARTIALE DIN ROMANIA</h1>
+
+<MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="string">
+    <BulletTemplate Context="selected">
+        <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+            <span class="mud-icon-button-label">
+                <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </BulletTemplate>
+    <PreviousButtonTemplate>
+        <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+            <span class="mud-icon-button-label">
+                <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </PreviousButtonTemplate>
+    <NextButtonTemplate>
+        <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+            <span class="mud-icon-button-label">
+                <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </NextButtonTemplate>
+    <ChildContent>
+
+        @foreach (var imageUrl in imageUrls)
+        {
+            <MudCarouselItem>
+                <div class="d-flex" Style="height:90%; align-items: center; justify-content: center;">
+                    <MudImage Src="@imageUrl" Alt="Image" Class="img-fluid" Width="1000" Height="1000" />
+                </div>
+            </MudCarouselItem>
+        }
+    </ChildContent>
+</MudCarousel>
+
+<br
+<br />
+<br />
+
+<div class="horizontal-images""d-flex flex-grow-1 gap-4" Elevation="0">
+    <figure>
+        <img src="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/12/bjj-768x1086.png" alt="Descriere imagine" style="width: 600px;" />
+    </figure>
+    <figure>
+        <img src="https://academiacatalinmorosanu.ro/wp-content/uploads/2023/06/gh-768x1086.png" alt="Descriere imagine" style="width: 666px;" />
+    </figure>
+</div>
+
+<div class="dotari-container" style="text-align: center; margin-top: 20px;">
+    <h1 style="font-size: 2em;">DOTARI</h1>
+    <br/>
+    <div class="dotari-icons" style="display: flex; justify-content: center; align-items: center;">
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.LocalParking" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">PARCARE GRATUITĂ</p>
+        </div>
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.Wifi" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">Wi-Fi GRATUIT</p>
+        </div>
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.Shower" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">BĂI DOTATE</p>
+        </div>
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.LocalBar" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">RECEPTIE BAR</p>
+        </div>
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.ShoppingBag" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">MAGAZIN ECHIPAMENTE</p>
+        </div>
+        <div class="icon-container" style="display: flex; flex-direction: column; align-items: center; margin: 0 90px;">
+            <MudIcon Icon="@Icons.Material.Filled.Chair" style="font-size: 3em;" />
+            <p class="icon-label" style="margin-top: 10px; font-size: 1.2em; text-align: center;">LOBBY</p>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <img src="https://logodownload.org/wp-content/uploads/2021/05/monster-energy-logo-0-2048x2048.png" alt="Logo" style="max-width: 20%; height: auto;" />
+    <img src="https://s3.amazonaws.com/rsportz-production/organizations/logos/000/003/321/original/FRAMC2.png" alt="Sponsor 2" style="max-width: 20%; height: auto; margin-left: 50px;" />
+    <img src="https://www.sportpitt.md/images/stories/virtuemart/manufacturer/pro-nutrition.png" alt="Sponsor 3" style="max-width: 20%; height: auto; margin-left: 50px;" />
+    <img src="https://logosmarcas.net/wp-content/uploads/2020/12/Decathlon-Logo.png" alt="Sponsor 4" style="max-width: 20%; height: auto; margin-left: 50px;" />
+</div>
+
+</div>
+
+
+
+@code {
+
+    List<string> imageUrls = new List<string>
+    {
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0690-scaled.jpg",
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0691-scaled.jpg",
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0692-scaled.jpg",
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0685-scaled.jpg",
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0708-scaled.jpg",
+        "https://academiacatalinmorosanu.ro/wp-content/uploads/2023/07/DSC_0731-scaled.jpg",
+    };
+
+}

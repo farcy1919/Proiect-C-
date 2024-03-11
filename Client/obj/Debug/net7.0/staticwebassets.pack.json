@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\z0250200\\OneDrive - ZF Friedrichshafen AG\\Desktop\\BlazorApp-empty1\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\z0250200\\OneDrive - ZF Friedrichshafen AG\\Desktop\\BlazorApp-empty1\\Client\\obj\\Debug\\net7.0\\compressed\\lmq60ksp59.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\z0250200\\OneDrive - ZF Friedrichshafen AG\\Desktop\\BlazorApp-empty1\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp-empty1.Client.styles.css",
+      "PackagePath": "staticwebassets\\BlazorApp-empty1.Client.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\z0250200\\OneDrive - ZF Friedrichshafen AG\\Desktop\\BlazorApp-empty1\\Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\z0250200\\OneDrive - ZF Friedrichshafen AG\\Desktop\\BlazorApp-empty1\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BlazorApp-empty1.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BlazorApp-empty1.Client.props",
+      "PackagePath": "build\\BlazorApp-empty1.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BlazorApp-empty1.Client.props",
+      "PackagePath": "buildMultiTargeting\\BlazorApp-empty1.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BlazorApp-empty1.Client.props",
+      "PackagePath": "buildTransitive\\BlazorApp-empty1.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
